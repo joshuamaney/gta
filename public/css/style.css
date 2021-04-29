@@ -23,6 +23,7 @@ header, .project:not(:last-child) {
   margin-left: -5px;
 }
 
-#map {
-  height: 180px;
+html, body, #map {
+  height: 100%;
+  width: 100%;
 }
