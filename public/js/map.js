@@ -26,7 +26,7 @@ function onLocationFound(e) {
 
     current_position = L.marker(e.latlng).addTo(mymap)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
+        
     current_accuracy = L.circle(e.latlng, radius).addTo(mymap);
 }
 
