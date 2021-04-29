@@ -25,6 +25,7 @@ GeocacheData.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     hint: {
       type: DataTypes.STRING,
