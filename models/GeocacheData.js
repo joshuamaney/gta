@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class GeocacheData extends Model {}
 
-Project.init(
+GeocacheData.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,22 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    latitude: {
+      type: DataTypes.DECIMAL(10,6),
+      allowNull: false
+    },
+    longitude: {
+      type: DataTypes.DECIMAL(10,6),
+      allowNull: false
+    },
     description: {
+      type: DataTypes.STRING,
+    },
+    hint: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -23,9 +34,9 @@ Project.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
+    last_found_date: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -40,8 +51,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'geocacheData',
   }
 );
 
-module.exports = Project;
+module.exports = GeocacheData;
