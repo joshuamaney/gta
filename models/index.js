@@ -1,13 +1,13 @@
 const User = require('./User');
-const GeocacheData = require('./GeocacheData');
+const Geocache = require('./Geocache');
 
-User.hasMany(GeocacheData, {
+User.hasMany(Geocache, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-GeocacheData.belongsTo(User, {
+Geocache.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, GeocacheData };
+module.exports = { User, Geocache };
