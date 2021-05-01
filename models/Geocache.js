@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class GeocacheData extends Model {}
+class Geocache extends Model {}
 
-GeocacheData.init(
+Geocache.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -25,6 +25,7 @@ GeocacheData.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     hint: {
       type: DataTypes.STRING,
@@ -51,8 +52,8 @@ GeocacheData.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'geocacheData',
+    modelName: 'geocache',
   }
 );
 
-module.exports = GeocacheData;
+module.exports = Geocache;
