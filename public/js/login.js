@@ -22,7 +22,13 @@ const loginFormHandler = async (event) => {
   }
 };
 
+$('#loginModal').on('shown.bs.modal', function () {
+  $('#modal-container').trigger('focus')
+})
+/*
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
+
+*/
