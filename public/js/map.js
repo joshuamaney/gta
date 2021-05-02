@@ -23,8 +23,6 @@ function onLocationFound(e) {
 
     var radius = e.accuracy / 2;
 
-    console.log(e.latlong);
-
     current_position = L.marker(e.latlng).addTo(mymap)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
@@ -38,9 +36,10 @@ function onLocationError(e) {
 mymap.on('locationfound', onLocationFound);
 mymap.on('locationerror', onLocationError);
 
-// wrap map.locate in a function    
+// wrap map.locate in a function   
+// Realtime Tracking Source: https://stackoverflow.com/questions/52603456/realtime-tracking-using-leaflet 
 function locate() {
-    mymap.locate({ setView: true, maxZoom: 16 });
+    mymap.locate({ setView: true, maxZoom: 16, watch: true });
 }
 
 locate();
@@ -51,6 +50,7 @@ mymap.on('click', function (e) {
     var coord = e.latlng;
     var lat = coord.lat;
     var lng = coord.lng;
+    console.log(e.latlng);
     console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
 });
 
