@@ -1,5 +1,5 @@
 const loginFormHandler = async (event) => {
-  event.preventDefault();
+  event.stopPropagation();
 
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -25,10 +25,9 @@ const loginFormHandler = async (event) => {
 $('#loginModal').on('shown.bs.modal', function () {
   $('#modal-container').trigger('focus')
 })
-/*
+
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  .querySelector('#login-btn')
+  .addEventListener('click', loginFormHandler);
 
 
-*/
