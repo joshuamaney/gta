@@ -23,6 +23,8 @@ function onLocationFound(e) {
 
     var radius = e.accuracy / 2;
 
+    console.log(e.latlong);
+
     current_position = L.marker(e.latlng).addTo(mymap)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
