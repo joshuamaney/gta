@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS userdata_db;
-CREATE DATABASE userdata_db;
+DROP DATABASE IF EXISTS geotreasure_db;
+CREATE DATABASE geotreasure_db;

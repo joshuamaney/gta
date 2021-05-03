@@ -1,17 +1,26 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "title": "Harris Teeter",
+    "latitude": 35.116995,
+    "longitude": -80.824444,
+    "description": "Small metal container with stickers on it",
+    "hint": "Check the milk aisle",
+    "user_id": 1
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "title": "South Meck HS",
+    "latitude": 35.109026,
+    "longitude": -80.860944,
+    "description": "Medium green canister with locking lid",
+    "hint": "National Anthem",
+    "user_id": 2
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "title": "Charlotte Country Day School",
+    "latitude": 35.144020,
+    "longitude": -80.803503,
+    "description": "Small black film canister",
+    "hint": "Under where?",
+    "user_id": 3
   }
 ]
