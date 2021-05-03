@@ -59,11 +59,11 @@ router.get('/user', withAuth, async (req, res) => {
       ],
     });
 
-    const users = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
 
     res.render('map', {
-      users,
+      ...user,
       logged_in: req.session.logged_in
     });
   } catch (err) {

@@ -3,14 +3,12 @@ const renderProfile = async (event) => {
 
     const response = await fetch('/user', {
         method: 'GET',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email }),
         headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-        console.log("sick!");
-        // If successful, do nothing!
-        return;
+        document.location.replace("/user");
     } else {
         alert(response.statusText);
     }
