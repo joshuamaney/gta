@@ -19,14 +19,15 @@
 </head>
 
 <body>
-  
   <!-- This is where the modal will come in -->
   {{> login-modal}}
   {{> signup-modal}}
   {{> profile-modal}}
   <div class="row">
     <div class="col-2">
-      <h2>GTA</h2><i><h6>GeoTreasure Adventures</h6></i>
+      <h2>GTA</h2><i>
+        <h6>GeoTreasure Adventures</h6>
+      </i>
     </div>
     <div class="col-10">
       <ul class="nav justify-content-end">
@@ -42,7 +43,8 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Sign
+            Up</button>
         </li>
         {{/if}}
       </ul>
@@ -58,13 +60,13 @@
         {{/if}}
       </ul>
     </div>
-    
-    
+
+
     <div class="col">
       {{{body}}}
     </div>
   </div>
-  
+
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
