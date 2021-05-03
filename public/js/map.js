@@ -1,6 +1,5 @@
 var mymap = L.map('map');
 
-
 L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmFpc3Rob3JwZSIsImEiOiJja28yMzZxa2EwMnVsMnJscmxvNTlyMTQ1In0.t3dJxPf2xoYJ8r_f7YmVHA`, {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -39,7 +38,7 @@ mymap.on('locationerror', onLocationError);
 // wrap map.locate in a function   
 // Realtime Tracking Source: https://stackoverflow.com/questions/52603456/realtime-tracking-using-leaflet 
 function locate() {
-    mymap.locate({ setView: true, maxZoom: 16, watch: true });
+    mymap.locate({ setView: true, maxZoom: 16, watch: true, timeout: 600000, maximumAge: 0});
 }
 
 locate();

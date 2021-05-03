@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     const geocaches = geocacheData.map((geocache) => geocache.get({plain:true}));
     // Pass serialized data and session flag into template
     console.log(geocaches[0]);
-    res.render('homepage', {
+    res.render('map-logged-in', {
       geocaches,
       logged_in: req.session.logged_in
     });
