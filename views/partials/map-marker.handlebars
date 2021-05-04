@@ -1,8 +1,11 @@
-
-<div id="map-markers">
+<div id="map-markers" class="hide">
     {{#each geocaches as |geocache|}}
-    <div id="geoid-{{id}}">{{latitude}}, {{longitude}}</div>
+    <div id="geoid-{{id}}">{{latitude}},{{longitude}}</div>
+    <div id="geotitle-{{id}}">{{title}}</div>
+    <div id="geodescription-{{id}}">{{description}}</div>
+    <div id="geohint-{{id}}">{{hint}}</div>
+    <div id="geodate-created-{{id}}">{{date-created}}</div>
+    <div id="geolastfound-{{id}}">{{last_found_date}}</div>
+    <div id="geouser-{{id}}">{{user_id}}</div>
     {{/each}}
 </div>
-
-

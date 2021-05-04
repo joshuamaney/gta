@@ -2,10 +2,23 @@ const element = document.getElementById("map-markers");
 
 const numberOfGeocaches = element.getElementsByTagName("*").length;
 
-console.log(element.children)
+function logSomething(event) {
+    event.stopPropagation();
 
-/*
-for (let i=1; i<numberOfGeocaches+1; i++) {
-    let geocache[i] = element.children.
+    console.log(element.children[0].outerText);
+    console.log(numberOfGeocaches);
 }
-*/
+
+
+document
+    .querySelector('#map-markers')
+    .addEventListener('click', logSomething);
+
+
+for (let i=0; i<numberOfGeocaches; i++) {
+    let geocache = element.children[i].outerText;
+    let coordinatesList = geocache.split(",");
+    let latitude = coordinatesList[0];
+    let longitude = coordinatesList[1];
+    console.log(`${latitude} & ${longitude}`);
+}
