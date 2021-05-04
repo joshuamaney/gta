@@ -1,28 +1,11 @@
-<div class="row">
-    {{username}}
+<div class="column">
+    {{> username-update}}
+    <h6>Username:</h6>
+    <h4>{{username}}</h4><button type="button" class="btn btn-primary btn" data-target="#updateModal"
+        data-toggle="modal">Update</button>
+    <!-- update username -->
+    <br><br><br>
+    <h6>Registered Email:</h6>
+    <h4>{{email}}</h4>
     {{> map-marker}}
 </div>
-
-{{!-- 
-<div class="modal fade" id="profileModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">{{log this}}{{username}}'s Profile</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {{settings.etag.[0]}}
-                {{this}}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Cool</button>
-            </div>
-        </div>
-    </div>
-</div>
---}}
