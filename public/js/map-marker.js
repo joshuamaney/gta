@@ -1,3 +1,4 @@
+/*
 const element = document.getElementById("map-markers");
 
 const numberOfGeocaches = element.getElementsByTagName("*").length;
@@ -21,4 +22,6 @@ for (let i=0; i<numberOfGeocaches; i++) {
     let latitude = coordinatesList[0];
     let longitude = coordinatesList[1];
     console.log(`${latitude} & ${longitude}`);
+    createMarker(latitude, longitude);
 }
+*/

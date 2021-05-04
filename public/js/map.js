@@ -90,4 +90,21 @@ var redIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([35.08873149, -80.83234278], {icon: greenIcon}).addTo(mymap).bindPopup("I am a green leaf.");
+function createMarker(lat, long) {
+    L.marker([lat, long], {icon: greenIcon}).addTo(mymap).bindPopup("I am a green leaf.");
+};
+
+
+
+const element = document.getElementById("geo-coordinates");
+
+const numberOfGeocaches = element.getElementsByTagName("*").length;
+
+for (let i=0; i<numberOfGeocaches; i++) {
+    let geocache = element.children[i].outerText;
+    let coordinatesList = geocache.split(",");
+    let latitude = coordinatesList[0];
+    let longitude = coordinatesList[1];
+    console.log(`${latitude} & ${longitude}`);
+    createMarker(latitude, longitude);
+}
