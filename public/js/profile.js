@@ -1,20 +1,28 @@
-const renderProfile = async (event) => {
-    event.preventDefault();
+const updateUsername = async (event) => {
+    event.stopPropagation();
 
-    const response = await fetch('/profile', {
-        method: 'POST',
-        body: JSON.stringify({ username, email }),
-        headers: { 'Content-Type': 'application/json' },
-    });
+    const username = document.querySelector("#username-update-input").value.trim();
 
-    if (response.ok) {
-        document.location.replace("/profile");
-    } else {
-        alert(response.statusText);
+    if (username) {
+
+        const response = await fetch('/api/users/update', {
+            method: 'PUT',
+            body: JSON.stringify({ username }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace("/profile");
+        } else {
+            alert(response.statusText);
+        }
     }
 };
-/*
+
+$('#username-update-btn').on('shown.bs.modal', function () {
+    $('#modal-container').trigger('focus')
+  })
+
 document
-    .querySelector('#profile-link')
-    .addEventListener('click', renderProfile);
-    */
+    .querySelector('#update-form-btn')
+    .addEventListener('click', updateUsername);

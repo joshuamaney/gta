@@ -58,4 +58,24 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.put('/update', async (req, res) => {
+  console.log(req.session.user_id)
+  try {
+    const user = await User.update(
+    {
+      username: req.body.username,
+    },
+    {
+      where: {
+        id: req.session.user_id,
+      },
+    });
+
+    res.status(200).json(user);
+  } catch (err) {
+    console.log(req.session.user_id)
+      res.status(500).json(err);
+    };
+});
+
 module.exports = router;
