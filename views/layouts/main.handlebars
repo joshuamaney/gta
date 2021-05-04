@@ -24,7 +24,7 @@
   {{> signup-modal}}
   <div class="row">
     <div class="col-2">
-      <h2>GTA</h2><i>
+      <img src="/images/gtaIcon.ico" alt="" width="32" height="32"><i>
         <h6>GeoTreasure Adventures</h6>
       </i>
     </div>
@@ -35,7 +35,8 @@
         </li>
         {{#if logged_in}}
         <li class="nav-item">
-          <a id="profile-link" href="/profile" class="nav-link">Profile</a>
+          <a id="profile-btn" href="#" class="nav-link" data-toggle="modal" data-target="#profileModal"><img
+              src="/images/userIcon.ico" alt="" width="32" height="32"></a>
         </li>
         <li class="nav-item">
           <button id="logout" type="button" class="btn btn-primary">Logout</button>
