@@ -1,3 +1,5 @@
+const hbs = require('express-handlebars');
+
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -19,4 +21,7 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  // json: (obj) => {
+  //   return new hbs.SafeString(JSON.stringify(obj))
+  // }
 };

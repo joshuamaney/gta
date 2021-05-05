@@ -1,3 +1,9 @@
 {{#each geocaches as |geocache|}}
-<a href="#"><li class="list-group-item">{{title}}</li></a>
+<a id="specific-geocache" data-point="{{latitude}},{{longitude}}" href="/">
+    <li class="list-group-item">
+        <h3 class="list-title m-0 p-0">{{title}}</h3>
+        <br>
+        <p class="list-description m-0 p-0">{{description}}</p>
+    </li>
+</a>
 {{/each}}

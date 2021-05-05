@@ -1,3 +1,5 @@
+//const { map } = require("underscore");
+
 var mymap = L.map('map');
 
 L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmFpc3Rob3JwZSIsImEiOiJja28yMzZxa2EwMnVsMnJscmxvNTlyMTQ1In0.t3dJxPf2xoYJ8r_f7YmVHA`, {
@@ -25,6 +27,8 @@ function onLocationFound(e) {
     current_position = L.marker(e.latlng).addTo(mymap)
         .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
+    window.current_position = e.latlng;
+
     current_accuracy = L.circle(e.latlng, radius).addTo(mymap);
 }
 
@@ -42,8 +46,6 @@ function locate() {
 }
 
 locate();
-// call locate every 3 seconds... forever
-// setInterval(locate, 3000);
 
 mymap.on('click', function (e) {
     var coord = e.latlng;
@@ -90,21 +92,20 @@ var redIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-function createMarker(lat, long) {
-    L.marker([lat, long], {icon: greenIcon}).addTo(mymap).bindPopup("I am a green leaf.");
+// This creates markers from the database information
+function createMarker(lat, long, text) {
+    L.marker([lat, long], {icon: redIcon}).addTo(mymap).bindPopup(text);
 };
 
-
-
-const element = document.getElementById("geo-coordinates");
-
-const numberOfGeocaches = element.getElementsByTagName("*").length;
-
-for (let i=0; i<numberOfGeocaches; i++) {
-    let geocache = element.children[i].outerText;
-    let coordinatesList = geocache.split(",");
-    let latitude = coordinatesList[0];
-    let longitude = coordinatesList[1];
-    console.log(`${latitude} & ${longitude}`);
-    createMarker(latitude, longitude);
+// This loops over the geocache data from the database and 
+// sets up the data for making a location marker and 
+// creating text for the marker's popup
+for (let i=0; i< window.stringGeocaches.length; i++) {
+    let geocache = window.stringGeocaches[i];
+    let latitude = geocache.latitude;
+    let longitude = geocache.longitude;
+    let text = `<h3 class="location-title">${geocache.title}</h3><br><p class="location-desc p-0">${geocache.description}</p><br><p class='location-hint p-0'>Hint: ${geocache.hint}</p>`
+    // console.log(`${latitude} & ${longitude}`);
+    createMarker(latitude, longitude, text);
 }
+
