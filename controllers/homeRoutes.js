@@ -15,9 +15,10 @@ router.get('/', async (req, res) => {
     });
 
     let geocaches = geocacheData.map((geocache) => geocache.get({plain:true}));
-    
+    let stringGeocaches = JSON.stringify(geocaches);
     res.render('map', {
       geocaches,
+      stringGeocaches,
       logged_in: req.session.logged_in
     });
   } catch (err) {

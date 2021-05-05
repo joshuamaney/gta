@@ -35,3 +35,32 @@ header, .project:not(:last-child) {
 .hide {
   display: none;
 }
+
+/* Map Tooltip Styles */
+
+.location-title {
+  font-weight: bold;
+}
+
+.location-desc {
+  font-size: small;
+}
+
+.location-hint {
+  font-size: small;
+  font-style: italic;
+}
+
+/* Geocache List Styles */
+
+.list-description {
+  font-size: small;
+  font-style: italic;
+  color: darkslategrey;
+}
+
+.list-title {
+  font-weight: bold;
+  font-size: medium;
+}
+
