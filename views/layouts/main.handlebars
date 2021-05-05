@@ -20,62 +20,31 @@
 
 <body>
   <!-- This is where the modal will come in -->
+  {{> nav-bar}}
   {{> login-modal}}
   {{> signup-modal}}
   {{> create-modal}}
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-        <img src="/images/gtaIcon.ico" alt="" width="32" height="32"><i>
-          <h6>GeoTreasure Adventures</h6>
-        </i>
-      </div>
-      <div class="col-10">
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a id="map-link" href="/" class="nav-link"><img src="/images/mapIcon.ico" alt="" width="32" height="32"></a>
-          </li>
-          {{#if logged_in}}
-          <li class="nav-item">
-            <a id="profile-btn" href="/profile" class="nav-link"><img
-                src="/images/userIcon.ico" alt="" width="32" height="32"></a>
-          </li>
-          <li class="nav-item">
-            <button id="logout" type="button" class="btn btn-primary">Logout</button>
-          </li>
-          {{else}}
-          <li class="nav-item">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Sign
-              Up</button>
-          </li>
-          {{/if}}
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <ul class="list-group">
-          {{#if logged_in}}
-          {{> nearby-geocache-list}}
-          <!-- Demo front end bullshit -->
-          <li class="list-group-item">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create New Location</button>
-          </li>
-          {{else}}
-          <li class="list-group-item">Login to see nearby geocache list!</li>
-          {{/if}}
-          
-        </ul>
-      </div>
+  {{> video-header}}
+  <div class="row">
+    <div class="col-2">
+      <ul class="list-group">
+        {{#if logged_in}}
+        {{> nearby-geocache-list}}
+        <!-- Demo front end bullshit -->
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create New
+            Location</button>
+        </li>
+        {{else}}
+        <li class="list-group-item">Login to see nearby geocache list!</li>
+        {{/if}}
 
-
-      <div class="col">
-        {{{body}}}
-      </div>
+      </ul>
     </div>
+    <div class="col">
+      {{{body}}}
+    </div>
+  </div>
   </div>
 
 
@@ -91,6 +60,7 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
   <script src="/js/map-marker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
