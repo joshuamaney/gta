@@ -1,5 +1,3 @@
-//const { map } = require("underscore");
-console.log("hit")
 var mymap = L.map('map');
 
 L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmFpc3Rob3JwZSIsImEiOiJja28yMzZxa2EwMnVsMnJscmxvNTlyMTQ1In0.t3dJxPf2xoYJ8r_f7YmVHA`, {
