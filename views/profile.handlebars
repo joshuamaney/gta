@@ -1,11 +1,13 @@
 <div class="column">
     {{> username-update}}
+    {{> email-update}}
     <h6>Username:</h6>
     <h4>{{username}}</h4><button type="button" class="btn btn-primary btn" data-target="#updateModal"
         data-toggle="modal">Update</button>
     <!-- update username -->
     <br><br><br>
     <h6>Registered Email:</h6>
-    <h4>{{email}}</h4>
+    <h4>{{email}}</h4><button type="button" class="btn btn-primary btn" data-target="#updateEmailModal"
+        data-toggle="modal">Update</button>
     {{> map-marker}}
 </div>

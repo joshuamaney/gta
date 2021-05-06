@@ -82,4 +82,24 @@ router.put('/update', async (req, res) => {
     };
 });
 
+router.put('/update/email', async (req, res) => {
+  console.log(req.session.user_id)
+  try {
+    const user = await User.update(
+    {
+      email: req.body.email,
+    },
+    {
+      where: {
+        id: req.session.email,
+      },
+    });
+
+    res.status(200).json(user);
+  } catch (err) {
+    console.log(req.session.user_id)
+      res.status(500).json(err);
+    };
+});
+
 module.exports = router;
