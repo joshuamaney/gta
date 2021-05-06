@@ -19,10 +19,6 @@ const updateUsername = async (event) => {
     }
 };
 
-$('#username-update-btn').on('shown.bs.modal', function () {
-    $('#modal-container').trigger('focus')
-})
-
 const updateEmail = async (event) => {
     event.stopPropagation();
 
@@ -44,12 +40,19 @@ const updateEmail = async (event) => {
     }
 };
 
-$('#email-update-btn').on('shown.bs.modal', function () {
+$('#username-update-btn').on('shown.bs.modal', function () {
     $('#modal-container').trigger('focus')
 })
 
 document
     .querySelector('#update-form-btn')
     .addEventListener('click', updateUsername)
+
+$('#email-update-btn').on('shown.bs.modal', function () {
+    $('#modal-container').trigger('focus')
+})
+
+document
+    .querySelector('#update-email-btn')
     document.addEventListener('click', updateEmail);
 

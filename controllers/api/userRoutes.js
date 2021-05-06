@@ -78,7 +78,7 @@ router.put('/update', async (req, res) => {
     };
 });
 
-router.put('/update', async (req, res) => {
+router.put('/update/email', async (req, res) => {
   console.log(req.session.user_id)
   try {
     const user = await User.update(
@@ -87,7 +87,7 @@ router.put('/update', async (req, res) => {
     },
     {
       where: {
-        id: req.session.user_id,
+        id: req.session.email,
       },
     });
 
