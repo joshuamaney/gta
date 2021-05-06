@@ -62,7 +62,7 @@ router.post('/logout', (req, res) => {
 });
 
 // Username Update Route
-router.put('/update', async (req, res) => {
+router.put('/update/username', async (req, res) => {
   console.log(req.session.user_id)
   try {
     const user = await User.update(
@@ -82,6 +82,10 @@ router.put('/update', async (req, res) => {
     };
 });
 
+<<<<<<< HEAD
+=======
+// Email Update Route
+>>>>>>> ebd032c (Email update modal now operational)
 router.put('/update/email', async (req, res) => {
   console.log(req.session.user_id)
   try {
@@ -91,7 +95,11 @@ router.put('/update/email', async (req, res) => {
     },
     {
       where: {
+<<<<<<< HEAD
         id: req.session.email,
+=======
+        id: req.session.user_id,
+>>>>>>> ebd032c (Email update modal now operational)
       },
     });
 

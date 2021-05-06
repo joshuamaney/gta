@@ -19,7 +19,8 @@ router.get('/', async (req, res) => {
     res.render('map', {
       geocaches,
       stringGeocaches,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      onMapPage: true
     });
   } catch (err) {
     res.status(500).json(err);
