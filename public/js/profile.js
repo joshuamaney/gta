@@ -19,50 +19,13 @@ const updateUsername = async (event) => {
     }
 };
 
-<<<<<<< HEAD
-const updateEmail = async (event) => {
-    event.stopPropagation();
-
-    const email = document.querySelector("#email-update-input").value.trim();
-
-    if (email) {
-
-        const response = await fetch('/api/users/update', {
-            method: 'PUT',
-            body: JSON.stringify({ email }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            document.location.replace("/profile");
-        } else {
-            alert(response.statusText);
-        }
-    }
-};
-
-$('#username-update-btn').on('shown.bs.modal', function () {
-=======
 
 
 $('#updateUsernameModal').on('shown.bs.modal', function () {
->>>>>>> ebd032c (Email update modal now operational)
     $('#modal-container').trigger('focus')
 })
 
 document
     .querySelector('#update-form-btn')
-<<<<<<< HEAD
-    .addEventListener('click', updateUsername)
-
-$('#email-update-btn').on('shown.bs.modal', function () {
-    $('#modal-container').trigger('focus')
-})
-
-document
-    .querySelector('#update-email-btn')
-    document.addEventListener('click', updateEmail);
-=======
     .addEventListener('click', updateUsername);
->>>>>>> ebd032c (Email update modal now operational)
 
