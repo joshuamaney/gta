@@ -5,7 +5,7 @@ const updateUsername = async (event) => {
 
     if (username) {
 
-        const response = await fetch('/api/users/update', {
+        const response = await fetch('/api/users/update/username', {
             method: 'PUT',
             body: JSON.stringify({ username }),
             headers: { 'Content-Type': 'application/json' },
@@ -19,40 +19,30 @@ const updateUsername = async (event) => {
     }
 };
 
-const updateEmail = async (event) => {
-    event.stopPropagation();
 
-    const email = document.querySelector("#email-update-input").value.trim();
 
-    if (email) {
-
-        const response = await fetch('/api/users/update', {
-            method: 'PUT',
-            body: JSON.stringify({ email }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            document.location.replace("/profile");
-        } else {
-            alert(response.statusText);
-        }
-    }
-};
-
-$('#username-update-btn').on('shown.bs.modal', function () {
+$('#updateUsernameModal').on('shown.bs.modal', function () {
     $('#modal-container').trigger('focus')
 })
 
 document
     .querySelector('#update-form-btn')
-    .addEventListener('click', updateUsername)
+    .addEventListener('click', updateUsername);
 
-$('#email-update-btn').on('shown.bs.modal', function () {
-    $('#modal-container').trigger('focus')
-})
 
-document
-    .querySelector('#update-email-btn')
-    document.addEventListener('click', updateEmail);
 
+const deleteAccount = async (event) => {
+    event.stopPropagation();
+
+    const response = await fetch("api/users/delete", {
+        method: "DELETE",
+    });
+
+    if (response.ok) {
+        document.location.replace('/');
+    } else {
+        alert("Failed to delete user")
+    }
+};
+
+document.querySelector("#account-delete-btn").addEventListener("click", deleteAccount);
