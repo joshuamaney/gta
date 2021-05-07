@@ -9,7 +9,7 @@ const createLocationHandler = async (event) => {
   if (title && lat && lng) {
     // Send a POST request to the API endpoint
     console.log(JSON.stringify({ title, description, hint, lat, lng }));
-    const response = await fetch('/api/location/create', {
+    const response = await fetch('/api/location', {
       method: 'POST',
       body: JSON.stringify({ title, description, hint, latitude: lat, longitude: lng }),
       headers: { 'Content-Type': 'application/json' },

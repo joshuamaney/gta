@@ -29,16 +29,13 @@
     <div class="col-2 col-xs">
       <ul class="list-group">
         {{#if logged_in}}
-        {{#if onMapPage}}
         {{> nearby-geocache-list}}
+        <!-- Demo front end bullshit -->
         <li class="list-group-item">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create New
             Location</button>
         </li>
-        
-        {{/if}}
-        {{/if}}
-        {{#if not_logged_in}}
+        {{else}}
         <li class="list-group-item">Login to see nearby geocache list!</li>
         {{/if}}
 

@@ -1,9 +1,6 @@
 <div class="column">
     {{> username-update}}
     {{> email-update}}
-    {{> geocache-title-update-modal}}
-    {{> geocache-description-update-modal}}
-    {{> geocache-hint-update-modal}}
     <h6>Username:</h6>
     <h4>{{username}}</h4><button type="button" class="btn btn-primary btn" data-target="#updateUsernameModal"
         data-toggle="modal">Update Username</button>
@@ -14,10 +11,6 @@
     <button type="button" class="btn btn-primary btn" data-target="#updateEmailModal"
         data-toggle="modal">Update Email</button>
     {{> map-marker}}
-    <br><br>
-    <h6>Your Geocaches</h6>
-    {{> user-geocache-cards}}
 </div>
 
 <script src="/js/profile.js"></script>
-<script src="/js/geocache.js"></script>
