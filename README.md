@@ -28,7 +28,7 @@ THEN I am provided routing directions to it from my location
 
 https://joshuamaney.github.io/gta/
 
-Screenshot of webpage: (../../public/images/GTAscreenshot.png)
+![Screenshot of webpage](public/images/GTAscreenshot.png)
 
 ## Technologies used:
 
