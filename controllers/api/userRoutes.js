@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Main Route
 router.post('/', async (req, res) => {
@@ -63,7 +64,7 @@ router.post('/logout', (req, res) => {
 
 // Username Update Route
 router.put('/update/username', async (req, res) => {
-  console.log(req.session.user_id)
+  // console.log(req.session.user_id)
   try {
     const user = await User.update(
     {
@@ -84,7 +85,7 @@ router.put('/update/username', async (req, res) => {
 
 // Email Update Route
 router.put('/update/email', async (req, res) => {
-  console.log(req.session.user_id)
+  // console.log(req.session.user_id)
   try {
     const user = await User.update(
     {

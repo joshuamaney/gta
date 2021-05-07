@@ -1,0 +1,18 @@
+{{#each geocaches as |geocache|}}
+<div class="card w-75">
+    <div class="card-body">
+        <h5>Title</h5>
+        <input class="card-title" value="{{title}}">
+        <br>
+        <h5>Description</h5>
+        <textarea class="card-text">{{description}}</textarea>
+        <br>
+        <h5>Hint</h5>
+        <textarea class="hint">{{hint}}</textarea>
+        <p class="date"><b>Date Created:</b> {{format_date date_created}}
+            <br><br>
+            <button class="btn btn-primary update-geocache-btn" data-id="{{id}}">Update</button>
+            <button id="delete-geocache-btn" class="btn btn-outline-danger" data-id="{{id}}">Delete</button>
+    </div>
+</div>
+{{/each}}
