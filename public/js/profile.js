@@ -29,3 +29,20 @@ document
     .querySelector('#update-form-btn')
     .addEventListener('click', updateUsername);
 
+
+
+const deleteAccount = async (event) => {
+    event.stopPropagation();
+
+    const response = await fetch("api/users/delete", {
+        method: "DELETE",
+    });
+
+    if (response.ok) {
+        document.location.replace('/');
+    } else {
+        alert("Failed to delete user")
+    }
+};
+
+document.querySelector("#account-delete-btn").addEventListener("click", deleteAccount);

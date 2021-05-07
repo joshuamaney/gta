@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Main Route
 router.post('/', async (req, res) => {
@@ -101,6 +102,33 @@ router.put('/update/email', async (req, res) => {
     console.log(req.session.user_id)
       res.status(500).json(err);
     };
+});
+
+
+router.delete("/delete", withAuth, async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.session.user_id,
+      }
+    });
+
+    if (!userData) {
+      res.status(404).json({message:"No user found by given id."});
+      return;
+    }
+
+    res.status(200).json(userData);
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
