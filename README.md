@@ -25,16 +25,24 @@ THEN I am provided routing directions to it from my location
 ```
 
 ## Link to Site
-
-https://joshuamaney.github.io/gta/
+https://geotreasureadventures.herokuapp.com/
 
 ![Screenshot of webpage](public/images/GTAscreenshot.png)
 
 ## Technologies used:
+- Framework: Bootstrap 
+- Google Translate
+- Open Street Map ​
+- Use Handlebars.js as the template engine.
+- Geocaching API
+- Mapbox
+- Leaflet JS
+- Openlayers
+- MapBox
+
 
 ## Project Requirements
 
-​​
 
 - Use Node.js and Express.js to create a RESTful API.
   ​
@@ -68,3 +76,6 @@ https://joshuamaney.github.io/gta/
 
 You can view the link to our GitHub repository here:
 https://github.com/joshuamaney/gta
+
+## Link to Site
+https://geotreasureadventures.herokuapp.com/
