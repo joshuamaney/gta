@@ -24,12 +24,6 @@ header,
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
-
 #map {
   height: 800px;
 }
@@ -112,5 +106,35 @@ header,
 @media (max-width: 768px) {
   .btn-lg {
     font-size: 1rem;
+  }
+
+  #main {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  #left-side {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    display: flex;
+    order: 1;  
+  }
+
+  #geocache-list {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  #main-content {
+    order: 2;
+  }
+
+  .video-background {
+    max-height: 200px;
+  }
+
+  .jumbotron {
+    max-height: 200px;
   }
 }
