@@ -2,6 +2,8 @@
 
 # Project 2 Description
 
+Our project provides the framework in which a user can begin hunting for a hidden geocache or even create one of their own. Geocaching is a real-world, outdoor treasure hunting game using global positioning system (GPS) on devices. Participants navigate to a specific set of GPS coordinates and then attempt to find the geocache (container) hidden at that location. Geocaching may also be described as a series of hide-and-seek games, where hiders provide online clues for seekers.
+
 ## User Story
 
 ```AS A modern-day adventurer in search of treasure
@@ -25,12 +27,14 @@ THEN I am provided routing directions to it from my location
 ```
 
 ## Link to Site
+
 https://geotreasureadventures.herokuapp.com/
 
 ![Screenshot of webpage](public/images/GTAscreenshot.png)
 
 ## Technologies used:
-- Framework: Bootstrap 
+
+- Framework: Bootstrap
 - Google Translate
 - Open Street Map ​
 - Use Handlebars.js as the template engine.
@@ -40,9 +44,7 @@ https://geotreasureadventures.herokuapp.com/
 - Openlayers
 - MapBox
 
-
 ## Project Requirements
-
 
 - Use Node.js and Express.js to create a RESTful API.
   ​
@@ -78,4 +80,5 @@ You can view the link to our GitHub repository here:
 https://github.com/joshuamaney/gta
 
 ## Link to Site
+
 https://geotreasureadventures.herokuapp.com/
