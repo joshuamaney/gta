@@ -34,14 +34,16 @@ document
 const deleteAccount = async (event) => {
     event.stopPropagation();
 
-    const response = await fetch("api/users/delete", {
-        method: "DELETE",
-    });
+    if (confirm("Are you sure?")) {
+        const response = await fetch("api/users/delete", {
+            method: "DELETE",
+        });
 
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert("Failed to delete user")
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert("Failed to delete user")
+        }
     }
 };
 
