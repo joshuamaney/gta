@@ -138,3 +138,41 @@ header,
     max-height: 200px;
   }
 }
+
+#profile-card {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  order: 1; 
+}
+
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #688ec8
+}
+
+.profile-button {
+  background: #688ec8;
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #688ec8
+}
+
+.profile-button:focus {
+  background: #688ec8;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #688ec8;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #688ec8;
+  cursor: pointer
+}
