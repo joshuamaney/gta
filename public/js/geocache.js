@@ -10,19 +10,18 @@ const deleteGeocache = async (event) => {
 
     const element = event.target;
 
-    console.log("hit");
-    console.log(element.getAttribute("data-index"));
-
     let id = element.getAttribute("data-index");
 
-    const response = await fetch(`/api/geocaches/delete/${id}`, {
-        method: "DELETE",
-    });
+    if (confirm("Are you sure?")) {
+        const response = await fetch(`/api/geocaches/delete/${id}`, {
+            method: "DELETE",
+        });
 
-    if (response.ok) {
-        document.location.replace('/profile');
-    } else {
-        alert("Failed to delete geocache")
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert("Failed to delete geocache")
+        }
     }
 };
 
