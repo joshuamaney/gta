@@ -25,6 +25,22 @@
   {{> signup-modal}}
   {{> create-modal}}
   {{> video-header}}
+front
+  <div class="row">
+    <ul class="list-group">
+      {{#if logged_in}}
+      {{> nearby-geocache-list}}
+      <!-- Demo front end bullshit -->
+      <li class="list-group-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create New
+          Location</button>
+      </li>
+      {{else}}
+      <li class="list-group-item">Login to see nearby geocache list!</li>
+      {{/if}}
+    </ul>
+    <div class="col">
+=======
   <div class="row" id="main">
     <div class="col-2 col-xs" id="left-side">
       <div>
@@ -45,11 +61,11 @@
       </ul>
     </div>
     <div class="col" id="main-content">
+ main
       {{{body}}}
       {{>learngeo}}
       {{>footer}}
     </div>
-  </div>
   </div>
 
 
