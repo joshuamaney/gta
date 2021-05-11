@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     req.body.user_id = req.session.user_id;
     console.log(req.body);
     if (!title) {
-        res.status(500).json({ message: 'Please submit a title you wily cunt' })
+        res.status(500).json({ message: 'Please submit a title!' })
     } else {
         // Write to the database using ORM
         const locationData = await Geocache.create(req.body);
@@ -39,7 +39,7 @@ router.put('/:id', async (req, res) => {
     const locationId = req.params.id;
 
     if (!title) {
-        res.status(500).json({ message: 'Please submit a title you wily cunt' })
+        res.status(500).json({ message: 'Please submit a title' })
     } else {
         // Write to the database using ORM (use an update call)
 
@@ -67,7 +67,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     const locationId = req.params.id;
     if (!title) {
-        res.status(500).json({ message: 'Please submit a title you wily cunt' })
+        res.status(500).json({ message: 'Please submit a title' })
     } else {
         // Delete from the database using the provided id
 

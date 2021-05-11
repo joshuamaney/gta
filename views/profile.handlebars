@@ -1,12 +1,23 @@
 {{>profile-card}}
 <div class="column">
     {{> username-update}}
+    {{> email-update}}
     <h6>Username:</h6>
-    <h4>{{username}}</h4><button type="button" class="btn btn-primary btn" data-target="#updateModal"
-        data-toggle="modal">Update</button>
+    <h4>{{username}}</h4><button type="button" class="btn btn-primary btn" data-target="#updateUsernameModal"
+        data-toggle="modal">Update Username</button>
     <!-- update username -->
     <br><br><br>
     <h6>Registered Email:</h6>
     <h4>{{email}}</h4>
+    <button type="button" class="btn btn-primary btn" data-target="#updateEmailModal"
+        data-toggle="modal">Update Email</button>
+        <br><br>
+    <h5>Your Geocaches</h5>
+    {{> user-geocache-cards}}
+    <br><br><br>
+    <button id="account-delete-btn" type="button" class="btn btn-outline-danger">Delete Account</button><br>
     {{> map-marker}}
 </div>
+
+<script src="/js/profile.js"></script>
+<script src="/js/geocache.js"></script>

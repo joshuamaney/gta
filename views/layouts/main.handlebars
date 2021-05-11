@@ -25,6 +25,7 @@
   {{> signup-modal}}
   {{> create-modal}}
   {{> video-header}}
+front
   <div class="row">
     <ul class="list-group">
       {{#if logged_in}}
@@ -39,6 +40,28 @@
       {{/if}}
     </ul>
     <div class="col">
+=======
+  <div class="row" id="main">
+    <div class="col-2 col-xs" id="left-side">
+      <div>
+        <ul class="list-group">
+        {{#if onMapPage}}
+        {{> nearby-geocache-list}}
+        <!-- Demo front end bullshit -->
+        {{#if logged_in}}
+        <li class="list-group-item">
+          </div>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create New
+            Location</button>
+        </li>
+        {{/if}}
+        {{/if}}
+
+
+      </ul>
+    </div>
+    <div class="col" id="main-content">
+ main
       {{{body}}}
       {{>learngeo}}
       {{>footer}}
@@ -50,7 +73,13 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+
+  <!-- Maybe move this to map.handlebars later -->
+  <!-- Partial seems to mess up script call -->
+  {{#if onMapPage}}
   <script src="/js/map.js"></script>
+  {{/if}}
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -62,7 +91,6 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  <script src="/js/profile.js"></script>
   <script src="/js/createModal.js"></script>
   {{else}}
   <script src="/js/login.js"></script>
